@@ -1,0 +1,75 @@
+body, html{
+  background-color:  black/*rgb(43,30,25)*/;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+}#iPhone{
+  background-image: url(../img/iPhone.png);
+  background-repeat: no-repeat;
+  height: 100%;
+}#header{
+  display: inline-block;
+  background-color: rgba(0,0,0,0);
+  height: 23px;
+  width: 80%;
+  margin-top: 22px;
+  margin-left: 28px;
+}#screen{
+  height: 598px;
+  width: 299px;
+  background-color: rgb(255,255,255);
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20%;
+}#hour{
+  font-weight: bold;
+  float: left;
+  width: 40px;
+  margin-left: 3px;
+}#signal{
+  background-image: url(../img/Signal1.png);
+  background-repeat: no-repeat;
+  float: left;
+  height: 22px;
+  width: 22px;
+  margin-left: 149px;
+}#gps{
+  background-image: url(../img/Gps.png);
+  background-repeat: no-repeat;
+  float: left;
+  height: 22px;
+  width: 22px;
+  margin-left: 3px;
+}#app{
+  margin-top: -5px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 259px;
+  height: 536px;
+  border-radius: 0px 0px 25px 25px;
+  background-color: green;
+}
+#appheader{
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: auto;
+  width: 259px;
+  height: 35px;
+}
+#logo{
+  background-image: url(../img/Apple.png);
+  margin-right: auto;
+  margin-left: auto;
+  top: 50px;
+  height: 35px;
+  width:35px
+}
+
+.phones{
+  left: auto;
+  right: auto;
+  height: 50%;
+  background-color: red;
+}
