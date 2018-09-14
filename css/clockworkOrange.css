@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+html{
+}
+html, body{
+  font-family: 'Lato', sans-serif;
+  height: 100%; width: 100%;
+  margin: 0px; padding: 0px;
+  background-color: #f2f2f2;
+}
+#blueHeader{
+  background-color: #66a3ff;
+  width: 100%;
+  height: 80px;
+}#title, #mtmLogo{
+  color: #000000;
+  height: 85%;
+  padding-top: 12px; padding-left: 25px;
+  float: left;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+}.button, #title p{
+  font-size: 11px; letter-spacing: 0.9px; text-align: center;
+}#leftSideBar, #blankSpace{
+  height: calc(100% - 80px);
+}#leftSideBar{
+  float: left; background-color: #404040; width: 100px;
+}#blankSpace{
+  width: calc(100% - 100px); float: right;
+}#mainFrame{
+  margin: 35px auto;
+
+  width: 94%; height: calc(100% - 70px);
+  background-color: #ffffff;
+}.icons{
+width: 100%; height: 100%;
+}.button{
+width: 100%; height: 20%;
+color: white;
+}.button img{
+  padding: 20px 0px 0px 0px;
+}.active{
+background-color: #d9d9d9;
+width: 100%; height: 20%;
+color: #000000;
+}

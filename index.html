@@ -1,27 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="css/coffee.css">
-    <script src="js/coffee.js"></script>
-    <!-- Para o caso de querer usar jQuery
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
-    <title>App Apresentation</title>
+    <title>MTM - Multi Time Manager</title>
+    <link rel="shotcut icon" href="img/icon.ico">
+    <link rel="stylesheet" href="css/clockworkOrange.css">
+    <script src="js/clockworkOrange.js"></script>
   </head>
   <body>
-    <div id="screen">
-        <div id="iPhone">
-          <div id="header">
-            <div id="hour"></div>
-            <div id="signal"></div>
-            <div id="gps"></div>
+      <div id="blueHeader">
+        <div id="mtmLogo">
+          <img src="img/mtmLogo.png" alt="">
+        </div>
+        <div id="title">
+          MTM <br> <p>Multi Time Manager</p>
+        </div>
+        <div class="icons">
+
+        </div>
+      </div>
+      <div id="leftSideBar">
+        <div class="icons">
+          <div class="button">
+            <img src="img/alarmClockWhite.png" alt="">
+            <p>Alarme</p>
           </div>
-          <div id="app">
-            <div id="appheader">
-              <div id="logo"></div>
-            </div>
+          <div class="button active" >
+            <img src="img/timerBlack.png" alt="">
+              <p>Temporizador</p>
+          </div>
+          <div class="button">
+            <img src="img/stopwatchWhite.png" alt="">
+              <p>Cronômetro</p>
           </div>
         </div>
-    </div>
+      </div>
+      <div id="blankSpace">
+        <div id="mainFrame">
+          <div id="hour">
+
+          </div>
+        </div>
+      </div>
   </body>
 </html>
