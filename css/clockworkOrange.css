@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Lato');
+/* @import url('https://fonts.googleapis.com/css?family=Lato'); */
 html{
 }
 html, body{
@@ -9,16 +9,14 @@ html, body{
 }
 #blueHeader{
   background-color: #66a3ff;
-  width: 100%;
-  height: 80px;
+  width: 100%; height: 80px;
 }#title, #mtmLogo{
   color: #000000;
   height: 85%;
   padding-top: 12px; padding-left: 25px;
+  text-align: center; font-size: 30px; font-weight: bold;
+  cursor: default;
   float: left;
-  text-align: center;
-  font-size: 30px;
-  font-weight: bold;
 }.button, #title p{
   font-size: 11px; letter-spacing: 0.9px; text-align: center;
 }#leftSideBar, #blankSpace{
@@ -28,26 +26,44 @@ html, body{
 }#blankSpace{
   width: calc(100% - 100px); float: right;
 }#mainFrameButtons{
-height: 18%;
+  height: 18%;
 }#mainFrame{
   margin: 35px auto;
   width: 94%; height: calc(100% - 70px);
   background-color: #ffffff;
 }.icons{
-width: 100%; height: 100%;
+  width: 100%; height: 100;
 }.button{
-width: 100%; height: 20%;
-color: white;
+  width: 100%; height: 20%;
+  color: white;
+  cursor: pointer;
 }.button img{
   padding: 20px 0px 0px 0px;
 }.active{
-background-color: #d9d9d9;
-width: 100%; height: 20%;
-color: #000000;
+  background-color: #d9d9d9;
+  width: 100%; height: 20%;
+  color: #000000;
+  padding-bottom: 5px;
 }#hour{
   text-align: center;
   height: 33%;
   padding-top: 12%;
 }#clock{
-  font-size: 8vh;
+  font-size: 50px;
+}#date{
+  font-size: 20px;
+}.alarmBtn{
+  background-color: #66a3ff;
+  border: none;
+  color: white;
+  margin-top: 35px;
+  padding: 15px 25px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+}.alarmBtn:hover {
+  background-color: #0066ff;
+}#backBtn{
+  margin: 10px;
+  display: none;
 }

@@ -21,16 +21,16 @@
       </div>
       <div id="leftSideBar">
         <div class="icons">
-          <div class="button">
-            <img src="img/alarmClockWhite.png" alt="">
+          <div id="btn0" class="button" onclick="btnOrganization(0)">
+            <img id="img0" src="img/alarmClockWhite.png">
             <p>Alarme</p>
           </div>
-          <div class="button active" >
-            <img src="img/timerBlack.png" alt="">
+          <div id="btn1" class="button active" onclick="btnOrganization(1)">
+            <img id="img1" src="img/timerBlack.png">
               <p>Temporizador</p>
           </div>
-          <div class="button">
-            <img src="img/stopwatchWhite.png" alt="">
+          <div id="btn2" class="button" onclick="btnOrganization(2)">
+            <img id="img2" src="img/stopwatchWhite.png">
               <p>Cronômetro</p>
           </div>
         </div>
@@ -39,14 +39,12 @@
 
         <div id="mainFrame">
           <div id="mainFrameButtons">
-
+            <button id="backBtn" class="alarmBtn" onclick="AlarmRedefinition()">Voltar</button>
           </div>
           <div id="hour">
-            <div id="clock">
-
-            </div>
-            <div id="date">
-
+            <div id="clock"></div><div id="date"></div>
+            <div >
+              <button onclick="alarmDefinition()" class="alarmBtn">Definir Alarme</button>
             </div>
           </div>
         </div>
