@@ -2,7 +2,7 @@ window.onload = function init() {
   setTimeout(getTime(), 1000);
 }
 function getTime(){
-  var h = new Date(), i = Math.floor((Math.random() * 4) + 1);
+  var h = new Date();
   document.getElementById("clock").innerHTML = addZero(h.getHours())+":"+addZero(h.getMinutes())+":"+addZero(h.getSeconds());
   document.getElementById("date").innerHTML = weekDayTranslation(h.getDay())+", "+h.getDate()+" de "+monthTranslation(h.getMonth())+" de "+ h.getFullYear();
 }
@@ -11,6 +11,22 @@ function addZero(i) {
         i = "0" + i;
     }
     return i;
+}
+function stopWatchBtns(){
+  document.getElementById("stopwatchStart").style.display = "none";
+  document.getElementById("pauseBtn").style.display = "inline";
+  document.getElementById("restartBtn").style.display = "inline";
+}
+function stopwatchStart(){
+  document.getElementById("startBtn").style.display = "none";
+}
+function stopWatchPause(){
+  document.getElementById("startBtn").style.display = "inline";
+  document.getElementById("startBtn").innerHTML = "Continuar";
+}
+function stopWatchReset(){
+  document.getElementById("startBtn").style.display = "inline";
+  document.getElementById("startBtn").innerHTML = "Começar";
 }
 function  beep(){
   var snd = new Audio("./snd/alarm1.wav");
@@ -25,32 +41,27 @@ function AlarmRedefinition(){
   document.getElementById("backBtn").style.display = "none";
 }
 function btnOrganization(i){
-  if (i == 0){
+  if (i==0){
     document.getElementById("img0").src = "img/alarmClockBlack.png";
-    document.getElementById("img1").src = "img/timerWhite.png";
     document.getElementById("img2").src = "img/stopwatchWhite.png";
     document.getElementById("btn0").className = "button active";
-    document.getElementById("btn1").className = "button";
     document.getElementById("btn2").className = "button";
+    document.getElementById("hour").style.display = "block";
+    document.getElementById("mainFrameButtons").style.display = "block";
+    document.getElementById("timerFrame").style.display = "none";
   }
-  else if (i == 1){
+  else{
     document.getElementById("img0").src = "img/alarmClockWhite.png";
-    document.getElementById("img1").src = "img/timerBlack.png";
-    document.getElementById("img2").src = "img/stopwatchWhite.png";
-    document.getElementById("btn0").className = "button";
-    document.getElementById("btn1").className = "button active";
-    document.getElementById("btn2").className = "button";
-  }
-  else if (i == 2){
-    document.getElementById("img0").src = "img/alarmClockWhite.png";
-    document.getElementById("img1").src = "img/timerWhite.png";
     document.getElementById("img2").src = "img/stopwatchBlack.png";
     document.getElementById("btn0").className = "button";
-    document.getElementById("btn1").className = "button";
     document.getElementById("btn2").className = "button active";
+    document.getElementById("hour").style.display = "none";
+    document.getElementById("timerFrame").style.display = "block";
+    document.getElementById("timer").style.display = "block";
+    document.getElementById("description").style.display = "block";
+    document.getElementById("mainFrameButtons").style.display = "block";
   }
 }
-
 function weekDayTranslation(i){
   if (i == 0) {
     i = "Domingo";
@@ -114,4 +125,31 @@ function monthTranslation(i){
   }
   return i;
 }
+var start = document.getElementById('startBtn'),
+    stop = document.getElementById('pauseBtn'),
+    clear = document.getElementById('restartBtn'),
+    seconds = 0, minutes = 0, hours = 0,
+    increment;
+function stopwatchStart(){
+  seconds++;
+  if(seconds >=60){
+    seconds = 0;
+    minutes++;
+    if (minutes>=60) {
+      minutes = 0;
+      hours++;
+    }
+  }
+  document.getElementById("timer").innerHTML = (hours ? (hours > 9 ? hours : "0" + hours) : "00") + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
+
+  stopWatchIncrement();
+}
+function  stopWatchIncrement(){
+  increment = setTimeout(stopwatchStart, 1000);
+}
+function  stopWatchPause(){
+  stopWatchIncrement.pause();
+}
+
+
 setInterval(function(){getTime()}, 1000);
