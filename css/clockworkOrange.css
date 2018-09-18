@@ -1,12 +1,12 @@
-/* @import url('https://fonts.googleapis.com/css?family=Lato'); */
-html, body{
-  font-family: 'Lato', sans-serif;
+ @import url('https://fonts.googleapis.com/css?family=Varela+Round');
+ html, body{
+  font-family: 'Varela Round', sans-serif;
   height: 100%; width: 100%;
   margin: 0px; padding: 0px;
   background-color: #f2f2f2;
   min-width: 300px;
 }
-.button, #title p{
+.button{
   font-size: 11px; letter-spacing: 0.9px; text-align: center;
 }
 .icons{
@@ -48,11 +48,11 @@ html, body{
 }
 
 
-#blueHeader{
-  background-color: #66a3ff;
+#orangeHeader{
+  background-color: #e68a00;
   width: 100%; height: 80px;
 }
-#title, #mtmLogo{
+#title, #ACWOLogo{
   color: #000000;
   height: 85%;
   padding-top: 12px; padding-left: 25px;
@@ -60,11 +60,15 @@ html, body{
   cursor: default;
   float: left;
 }
+#ACWOLogo img{
+  height: 80px;
+  margin-top: -13px;
+}
 #leftSideBar, #blankSpace{
   height: calc(100% - 80px);
 }
 #leftSideBar{
-  float: left; background-color: #404040; width: 100px;
+  float: left; background-color: #404040; color: #e68a00; width: 100px;
 }
 #blankSpace{
   width: calc(100% - 100px); float: right;
@@ -78,6 +82,7 @@ html, body{
   margin: 35px auto 0 auto;
   width: 94%; height: calc(100% - 70px);
   background-color: #ffffff;
+  color: #e68a00;
 }
 #hour{
   text-align: center;
