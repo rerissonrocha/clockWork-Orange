@@ -1,6 +1,12 @@
 window.onload = function init() {
   setTimeout(getTime(), 1000);
 }
+var start = document.getElementById('startBtn'),
+    stop = document.getElementById('pauseBtn'),
+    clear = document.getElementById('restartBtn'),
+    seconds = 0, minutes = 0, hours = 0,
+    increment, active = true;
+
 function getTime(){
   var h = new Date();
   document.getElementById("clock").innerHTML = addZero(h.getHours())+":"+addZero(h.getMinutes())+":"+addZero(h.getSeconds());
@@ -12,33 +18,46 @@ function addZero(i) {
     }
     return i;
 }
-function stopWatchBtns(){
-  document.getElementById("stopwatchStart").style.display = "none";
-  document.getElementById("pauseBtn").style.display = "inline";
-  document.getElementById("restartBtn").style.display = "inline";
-}
 function stopwatchStart(){
-  document.getElementById("startBtn").style.display = "none";
+  if(active == true){
+    stopwatchStartInc()
+    document.getElementById("startBtn").innerHTML = "Ativo";
+    document.getElementById("startBtn").style.backgroundColor = "#009933";
+  }
+  active = false;
 }
 function stopWatchPause(){
-  document.getElementById("startBtn").style.display = "inline";
-  document.getElementById("startBtn").innerHTML = "Continuar";
+  if(!active){
+    document.getElementById("startBtn").innerHTML = "Continuar";
+    document.getElementById("startBtn").style.backgroundColor = "#00ff55";
+  }
+  clearTimeout(increment);
+  active = true;
 }
 function stopWatchReset(){
-  document.getElementById("startBtn").style.display = "inline";
-  document.getElementById("startBtn").innerHTML = "Começar";
+  if(!active){
+    document.getElementById("startBtn").innerHTML = "Começar";
+    document.getElementById("startBtn").style.backgroundColor = "#00ff55";
+  }
+  document.getElementById("timer").innerHTML = "00:00:00"
+  seconds = 0; minutes = 0; hours = 0;
+  active = true; clearTimeout(increment);
 }
-function  beep(){
-  var snd = new Audio("./snd/alarm1.wav");
-  snd.play();
+function stopwatchStartInc(){
+  seconds++;
+  if(seconds >=60){
+    seconds = 0;
+    minutes++;
+    if (minutes>=60) {
+      minutes = 0;
+      hours++;
+    }
+  }
+  document.getElementById("timer").innerHTML = addZero(hours)+":"+addZero(minutes)+":"+addZero(seconds);
+  stopWatchIncrement();
 }
-function alarmDefinition(){
-  document.getElementById("hour", "date").style.display = "none";
-  document.getElementById("backBtn").style.display = "inline";
-}
-function AlarmRedefinition(){
-  document.getElementById("hour", "date").style.display = "block";
-  document.getElementById("backBtn").style.display = "none";
+function  stopWatchIncrement(){
+  increment = setTimeout(stopwatchStartInc, 1000);
 }
 function btnOrganization(i){
   if (i==0){
@@ -47,7 +66,6 @@ function btnOrganization(i){
     document.getElementById("btn0").className = "button active";
     document.getElementById("btn2").className = "button";
     document.getElementById("hour").style.display = "block";
-    document.getElementById("mainFrameButtons").style.display = "block";
     document.getElementById("timerFrame").style.display = "none";
   }
   else{
@@ -59,96 +77,15 @@ function btnOrganization(i){
     document.getElementById("timerFrame").style.display = "block";
     document.getElementById("timer").style.display = "block";
     document.getElementById("description").style.display = "block";
-    document.getElementById("mainFrameButtons").style.display = "block";
   }
 }
-function weekDayTranslation(i){
-  if (i == 0) {
-    i = "Domingo";
-  }
-  else if (i == 1) {
-    i = "Segunda";
-  }
-  else if (i == 2){
-    i = "Terça";
-  }
-  else if (i == 3) {
-    i = "Quarta";
-  }
-  else if (i == 4) {
-    i = "Quinta";
-  }
-  else if (i == 5) {
-    i = "Sexta";
-  }
-  else {
-    i = "Sábado";
-  }
-  return i;
+function weekDayTranslation(x){
+  var weekDay = ["Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado"];
+  return weekDay[x];
 }
-function monthTranslation(i){
-  if (i == 0) {
-    i = "janeiro";
-  }
-  else if (i == 1) {
-    i = "fevereiro";
-  }
-  else if (i == 2){
-    i = "março";
-  }
-  else if (i == 3) {
-    i = "abril";
-  }
-  else if (i == 4) {
-    i = "maio";
-  }
-  else if (i == 5) {
-    i = "junho";
-  }
-  else if (i == 6){
-    i = "julho";
-  }
-  else if (i == 7) {
-    i = "agosto";
-  }
-  else if (i == 8){
-    i = "setembro";
-  }
-  else if (i == 9) {
-    i = "outubro";
-  }
-  else if (i == 10) {
-    i = "novembro";
-  }
-  else {
-    i = "dezembro";
-  }
-  return i;
-}
-var start = document.getElementById('startBtn'),
-    stop = document.getElementById('pauseBtn'),
-    clear = document.getElementById('restartBtn'),
-    seconds = 0, minutes = 0, hours = 0,
-    increment;
-function stopwatchStart(){
-  seconds++;
-  if(seconds >=60){
-    seconds = 0;
-    minutes++;
-    if (minutes>=60) {
-      minutes = 0;
-      hours++;
-    }
-  }
-  document.getElementById("timer").innerHTML = (hours ? (hours > 9 ? hours : "0" + hours) : "00") + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
-
-  stopWatchIncrement();
-}
-function  stopWatchIncrement(){
-  increment = setTimeout(stopwatchStart, 1000);
-}
-function  stopWatchPause(){
-  stopWatchIncrement.pause();
+function monthTranslation(y){
+  var actualMonth = ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"];
+  return actualMonth[y];
 }
 
 
