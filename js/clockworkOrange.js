@@ -19,7 +19,7 @@ function addZero(i) {
     return i;
 }
 function stopwatchStart(){
-  if(active == true){
+  if(active){
     stopwatchStartInc()
     document.getElementById("startBtn").innerHTML = "Ativo";
     document.getElementById("startBtn").style.backgroundColor = "#009933";
@@ -35,25 +35,22 @@ function stopWatchPause(){
   active = true;
 }
 function stopWatchReset(){
+  document.getElementById("startBtn").innerHTML = "Começar";
   if(!active){
-    document.getElementById("startBtn").innerHTML = "Começar";
     document.getElementById("startBtn").style.backgroundColor = "#00ff55";
   }
   document.getElementById("timer").innerHTML = "00:00:00.00";
-  seconds = 0; minutes = 0; hours = 0;
+  milisec = 0; seconds = 0; minutes = 0; hours = 0;
   active = true; clearTimeout(increment);
 }
 function stopwatchStartInc(){
   milisec++;
   if (milisec>=100) {
-    milisec=0;
-    seconds++;
+    milisec=0; seconds++;
     if(seconds >=60){
-      seconds = 0;
-      minutes++;
+      seconds = 0; minutes++;
       if (minutes>=60) {
-        minutes = 0;
-        hours++;
+        minutes = 0; hours++;
       }
     }
   }

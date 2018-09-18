@@ -86,14 +86,14 @@
 #mainFrame{
   margin-top: 35px;
   margin-left: auto; margin-right: auto;
-  width: 94%; height: calc(100% - 70px);
+  width: 94%; height: calc(100% - 100px);
   background-color: #ffffff;
   color: #e68a00;
 }
 #hour{
   text-align: center;
   height: 33%;
-  padding-top: 18%;
+  padding-top: 12%;
 }
 #backBtn{
   margin: 10px;
@@ -107,7 +107,7 @@
 #timerFrame{
   text-align: center;
   height: 33%;
-  padding-top: 18%;;
+  padding-top: 12%;;
   display: none;
 }
 #timer{
