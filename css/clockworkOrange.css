@@ -3,8 +3,8 @@
   font-family: 'Varela Round', sans-serif;
   height: 100%; width: 100%;
   margin: 0px; padding: 0px;
-  background-color: #f2f2f2;
-  min-width: 300px;
+  background-color: #d9d9d9;
+  min-width: 625px;
 }
 .button{
   font-size: 11px; letter-spacing: 0.9px; text-align: center;
@@ -30,7 +30,7 @@
   background-color: #66a3ff;
   border: none;
   color: white;
-  margin-top: 35px;
+  margin-top: 15px;
   padding: 15px 25px;
   text-align: center;
   font-size: 16px;
@@ -44,7 +44,7 @@
   font-size: 70px;
 }
 .secondaryFont{
-  font-size: 15px;
+  font-size: 20px;
 }
 
 
@@ -53,6 +53,14 @@
   width: 100%; height: 80px;
 }
 #title, #ACWOLogo{
+  color: #000000;
+  height: 50%;
+  padding-top: 22px; padding-left: 25px;
+  text-align: center; font-size: 30px; font-weight: bold;
+  cursor: default;
+  float: left;
+}
+#ACWOLogo{
   color: #000000;
   height: 85%;
   padding-top: 12px; padding-left: 25px;
@@ -68,18 +76,16 @@
   height: calc(100% - 80px);
 }
 #leftSideBar{
-  float: left; background-color: #404040; color: #e68a00; width: 100px;
+  float: left; background-color: #1a1a1a; color: #e68a00; width: 100px;
 }
 #blankSpace{
   width: calc(100% - 100px); float: right;
-  font-size: 12px;
+  font-size: 22px;
   text-align: center;
 }
-#mainFrameButtons{
-  height: 18%;
-}
 #mainFrame{
-  margin: 35px auto 0 auto;
+  margin-top: 35px;
+  margin-left: auto; margin-right: auto;
   width: 94%; height: calc(100% - 70px);
   background-color: #ffffff;
   color: #e68a00;
@@ -87,23 +93,28 @@
 #hour{
   text-align: center;
   height: 33%;
-  padding-top: 8%;
-}
-#date{
-  font-size: 20px;
+  padding-top: 18%;
 }
 #backBtn{
   margin: 10px;
   display: none;
 }
+#miliseconds{
+  font-size: 20px;
+  display: inline-block;
+  margin-left: -20px;
+}
 #timerFrame{
   text-align: center;
   height: 33%;
-  padding-top: 8%;
+  padding-top: 18%;;
   display: none;
 }
 #timer{
   display: none;
+}
+#timer span{
+  font-size: 20px;
 }
 #description{
   display: block;
@@ -124,16 +135,17 @@
 #restartBtn:hover{
   background-color: #801a00;
 }
-@media only screen and (max-width: 500px) {
+@media (orientation: portrait) {
   body {
   }
   #leftSideBar{
-    height: 120px; width: 100%;
+    height: 117px; width: 100%;
     float: none;
     text-align: center;
   }
-  #img0, #img2{
-    height: 0px;
+  .icons{
+    float: left;
+    width: 100%;
   }
   .button img{
     padding: 0px;
@@ -143,21 +155,34 @@
   }
   #btn0, #btn2{
     font-size: 15px;
-    height: 60px;
+    padding-top: 10px;
+    width: 50%;
+    float: left;
   }
   #mainFrame{
     float: none;
   }
   #blankSpace{
-    height: calc(100% - 200px);
+    height: calc(100% - 227px);
     width: 98%;
   }
-}
-@media only screen and (max-width: 400px) {
-  .btn{
-    margin-top: 5px;
+  .principalFont{
+    font-size: 13vw;
   }
-  #restartBtn{
-    margin-top: 5px;
+  .secondaryFont{
+    font-size: 5vw;
+  }
+  #description{
+    font-size: 4vw;
+  }
+  #ACWOLogo{
+    margin-left: 25%;
+    margin-right: auto;
+  }
+  .btn{
+    margin: 35px 10px;
+    padding: 15px 25px;
+    font-size: 26px;
+    width: 150px;
   }
 }

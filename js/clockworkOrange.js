@@ -4,7 +4,7 @@ window.onload = function init() {
 var start = document.getElementById('startBtn'),
     stop = document.getElementById('pauseBtn'),
     clear = document.getElementById('restartBtn'),
-    seconds = 0, minutes = 0, hours = 0,
+    milisec = 0, seconds = 0, minutes = 0, hours = 0,
     increment, active = true;
 
 function getTime(){
@@ -39,25 +39,29 @@ function stopWatchReset(){
     document.getElementById("startBtn").innerHTML = "Começar";
     document.getElementById("startBtn").style.backgroundColor = "#00ff55";
   }
-  document.getElementById("timer").innerHTML = "00:00:00"
+  document.getElementById("timer").innerHTML = "00:00:00.00";
   seconds = 0; minutes = 0; hours = 0;
   active = true; clearTimeout(increment);
 }
 function stopwatchStartInc(){
-  seconds++;
-  if(seconds >=60){
-    seconds = 0;
-    minutes++;
-    if (minutes>=60) {
-      minutes = 0;
-      hours++;
+  milisec++;
+  if (milisec>=100) {
+    milisec=0;
+    seconds++;
+    if(seconds >=60){
+      seconds = 0;
+      minutes++;
+      if (minutes>=60) {
+        minutes = 0;
+        hours++;
+      }
     }
   }
-  document.getElementById("timer").innerHTML = addZero(hours)+":"+addZero(minutes)+":"+addZero(seconds);
+  document.getElementById("timer").innerHTML = addZero(hours)+":"+addZero(minutes)+":"+addZero(seconds)+"."+addZero(milisec);
   stopWatchIncrement();
 }
 function  stopWatchIncrement(){
-  increment = setTimeout(stopwatchStartInc, 1000);
+  increment = setTimeout(stopwatchStartInc, 10);
 }
 function btnOrganization(i){
   if (i==0){

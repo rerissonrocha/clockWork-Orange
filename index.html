@@ -1,53 +1,47 @@
-<!DOCTYPE html>
-<html lang="pt" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>A clockwork Orange</title>
-    <link rel="shotcut icon" href="img/acologo.png">
-    <link rel="stylesheet" href="css/clockworkOrange.css">
-    <script src="js/clockworkOrange.js"></script>
-  </head>
-  <body>
-      <div id="orangeHeader">
-        <div id="ACWOLogo">
-          <img src="img/ACWOLogo.png" alt="">
+  <!DOCTYPE html>
+  <html lang="pt" dir="ltr">
+    <head>
+      <meta charset="utf-8">
+      <title>A clockwork Orange</title>
+      <link rel="shotcut icon" href="img/acologo.png">
+      <link rel="stylesheet" href="css/clockworkOrange.css">
+      <script src="js/clockworkOrange.js"></script>
+    </head>
+    <body>
+        <div id="orangeHeader">
+          <div id="ACWOLogo">
+            <img src="img/ACWOLogo.png" alt="">
+          </div>
+          <div id="title">
+            A Clockwork Orange
+          </div>
         </div>
-        <div id="title">
-          A clockwork Orange
+        <div id="leftSideBar">
+          <div class="icons">
+            <div id="btn0" class="button active" onclick="btnOrganization(0)">
+              <img id="img0" src="img/alarmClockBlack.png">
+              <p>Relógio</p>
+            </div>
+            <div id="btn2" class="button" onclick="btnOrganization(1)">
+              <img id="img2" src="img/stopwatchWhite.png">
+                <p>Cronômetro</p>
+            </div>
+          </div>
         </div>
-        <div class="icons">
+        <div id="blankSpace">
 
+          <div id="mainFrame">
+            <div id="hour">
+              <div id="clock" class="principalFont"></div><div id="date" class="secondaryFont"></div>
+            </div>
+            <div id="timerFrame">
+              <div id="timer" class="principalFont">00:00:00.00</div><div id="description" class="secondaryFont">Horas, minutos, segundos e milissegundos.</div>
+              <button class="btn" id="startBtn" onclick="stopwatchStart()">Começar</button>
+              <button class="btn" id="pauseBtn" onclick="stopWatchPause()">Pausar</button>
+              <button class="btn" id="restartBtn" onclick="stopWatchReset()">Reiniciar</button>
+            </div>
+          </div>
+          <span style="color:#e68a00"><br>Rérisson Rocha © 2018</span>
         </div>
-      </div>
-      <div id="leftSideBar">
-        <div class="icons">
-          <div id="btn0" class="button active" onclick="btnOrganization(0)">
-            <img id="img0" src="img/alarmClockBlack.png">
-            <p>Relógio</p>
-          </div>
-          <div id="btn2" class="button" onclick="btnOrganization(1)">
-            <img id="img2" src="img/stopwatchWhite.png">
-              <p>Cronômetro</p>
-          </div>
-        </div>
-      </div>
-      <div id="blankSpace">
-
-        <div id="mainFrame">
-          <div id="mainFrameButtons">
-
-          </div>
-          <div id="hour">
-            <div id="clock" class="principalFont"></div><div id="date" class="secondaryFont"></div>
-          </div>
-          <div id="timerFrame">
-            <div id="timer" class="principalFont">00:00:00</div><div id="description" class="secondaryFont">Horas, minutos e  segundos.</div>
-            <button class="btn" id="startBtn" onclick="stopwatchStart()">Começar</button>
-            <button class="btn" id="pauseBtn" onclick="stopWatchPause()">Pausar</button>
-            <button class="btn" id="restartBtn" onclick="stopWatchReset()">Reiniciar</button>
-          </div>
-        </div>
-        <span style="color:#e68a00"><br>Rérisson Rocha © 2018</span>
-      </div>
-  </body>
-</html>
+    </body>
+  </html>
